@@ -1,0 +1,27 @@
+.modal-bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    display: flex;
+    z-index: 99;
+  }
+  
+.modal {
+  position: absolute;
+  background: white;
+  border-radius: 8px;
+  padding: 10px 10px;
+}
+
+.animation.slideInUp {
+  animation-name: slideInUp;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.animation.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}

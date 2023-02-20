@@ -1,0 +1,52 @@
+{
+  "name": "nbbang",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "vue-cli-service serve --port 3000",
+    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve --port 3000",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
+    "lint": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service lint"
+  },
+  "dependencies": {
+    "@vuelidate/core": "^2.0.0-alpha.34",
+    "@vuelidate/validators": "^2.0.0-alpha.26",
+    "axios": "^0.25.0",
+    "core-js": "^3.6.5",
+    "pinia": "^2.0.11",
+    "swiper": "^8.0.0",
+    "vue": "^3.0.0",
+    "vue-cookies": "^1.7.4",
+    "vue-geolocation-api": "^0.1.21",
+    "vue-router": "^4.0.12",
+    "vue3-timepicker": "^1.0.0-beta.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

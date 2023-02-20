@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<query>
+    <!-- <select_1hour_list>SELECT A.userid, B.host_kakao_uid FROM t_chat A RIGHT OUTER JOIN (SELECT * FROM `unic`.`chat_fixed` WHERE `time_order` BETWEEN ? AND ? ORDER BY `time_order`) B ON A.chatid = B.chat_id</select_1hour_list> -->
+    <select_1hour_list>SELECT * FROM t_chat A RIGHT OUTER JOIN (SELECT * FROM `unic`.`chat_fixed` WHERE `time_order` BETWEEN ? AND ? ORDER BY `time_order`) B ON A.chatid = B.chat_id</select_1hour_list>
+    <update_curr_chat_id>UPDATE `unic`.`user_data` SET `curr_chat_id` = 0 WHERE `kakao_uid` = ?</update_curr_chat_id>
+    <update_last_chat_id>UPDATE `unic`.`user_data` SET `last_chat_id` = ?, `curr_chat_id` = 0 WHERE `kakao_uid` = ?</update_last_chat_id>
+</query>

@@ -1,0 +1,144 @@
+.rooms {
+  position: relative;
+  width: 105%;
+  height: calc(100% - 150px);
+  background: transparent;
+  overflow-y: scroll;
+}
+
+.rooms::-webkit-scrollbar {
+  display: none;
+}
+
+.nothing {
+  position: relative;
+  top: 48%;
+  color: #DF7D10;
+}
+
+.room {
+  position: relative;
+  width: 92%;
+  height: 150px;
+  margin: 10px auto;
+  border: solid 2px #e0e0e0;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.room.disabled {
+  cursor: not-allowed;  
+}
+
+.room.hideOn {
+  display: none;
+}
+
+.current {
+  border: solid 2px #f4c26a !important;
+  background: #FFFCF2 !important;
+}
+
+.info {
+  position: relative;
+  float: left;
+  width: calc(100% - 100px);
+  padding: 5px;
+  border-right: 2px #e0e0e0 dashed;
+  height: 100%;
+}
+
+.tags {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.tag {
+  float: left;
+  height: 20px;
+  text-align: center;
+  text-align-last: center;
+  font-size: 7pt;
+  font-weight: bold;
+  color: white;
+  background: #DF7D10;
+  border-radius: 5px;
+  margin: 0px 2px;
+  padding: 5px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 85px;
+}
+
+.detail {
+  float: left;
+  word-break: break-all;
+  text-align: center;
+  padding: 5px 0px;
+}
+
+.hashtags {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 30px;
+  overflow-x: scroll;
+}
+
+.hashtags::-webkit-scrollbar {
+  display: none;
+}
+
+.hashtag {
+  position: relative;
+  float: left;
+  height: 22px;
+  font-size: 9pt;
+  border: solid 1px #e0e0e0;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  margin-right: 5px;  
+  word-break: keep-all;
+  white-space: pre;
+}
+
+.host {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 9pt;
+  font-weight: bold;  
+}
+
+.host .profile {
+  height: calc(100% - 70px);
+  margin: 5px;
+}
+
+.review {
+  width: 100%;
+}
+
+.review .good,
+.review .bad {
+  position: relative;
+  float: left;
+  width: 40%;
+  height: 50px;
+  margin: 0px 5px;
+}

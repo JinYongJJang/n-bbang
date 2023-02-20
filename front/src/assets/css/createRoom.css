@@ -1,0 +1,373 @@
+h3 {
+  padding: 0;
+  line-height: 150%;
+}
+
+.tagsInline {
+  display: inline-block;
+}
+
+#room {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+}
+
+#room::-webkit-scrollbar {
+  display: none;
+}
+
+.help {
+  border: 0px solid transparent;
+  margin-left: 6px;
+  background-color: transparent;
+}
+
+img {
+  opacity: 0.8;
+}
+
+.timepicker {
+  width: 100% !important;
+  position: absolute;
+  left: 0px;
+}
+
+.timepicker::v-deep input {
+  margin-top: 5px;
+  font-size: 12pt;
+  width: 100%;
+  height: 45px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px 2px lightgray;
+  padding: 0px 5px;
+  color: black;
+  
+  opacity: 0;
+}
+
+.timepicker::v-deep input::placeholder {
+  color: gray;
+}
+
+.timepicker::v-deep input:focus {
+  border: 2px solid #df7d10 !important;
+  box-shadow: 0px 0px 0px 2px #df7d10 !important;
+  border-radius: 5px;
+  padding: 0px 5px;
+}
+
+.timepicker::v-deep .dropdown {
+  top: 32px !important;
+  width: 100% !important;
+  border: 2px solid lightgray;
+}
+
+.timepicker::v-deep .select-list {
+  width: 100% !important;
+}
+
+.timepicker::v-deep .active {
+  background: #df7d10 !important;
+}
+
+.timepicker::v-deep .dropdown .hours {
+  border-right: 1px solid lightgray;
+}
+
+.timepicker::v-deep .dropdown .minutes {
+  border-left: 1px solid lightgray;
+}
+
+.timepicker::v-deep .dropdown .hint {
+  display: none !important;
+}
+
+.timepicker::v-deep .controls {
+  display: none;
+}
+
+select {
+  margin-top: 5px;
+  font-size: 12pt;
+  font-weight: bold;
+  width: 100%;
+  height: 45px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px 2px lightgray;
+  padding: 0px 5px;
+  color: black;
+  background-color: transparent;
+  /* appearance: none; */
+}
+
+select option[value=""][disabled] {
+  display: none;
+}
+
+select:invalid {
+  color: darkgray;
+}
+
+select:focus {
+  border: 2px solid #df7d10 !important;
+  box-shadow: 0px 0px 0px 2px #df7d10 !important;
+  border-radius: 5px;
+  padding: 0px 5px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio-group {
+  position: relative;
+  height: 50px;
+}
+
+input {
+  margin-top: 5px;
+  font-size: 12pt;
+  width: 100%;
+  height: 45px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px 2px lightgray;
+  padding: 0px 10px;
+  color: black;  
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  appearance: none;
+  z-index: 1;
+  height: 43px;  
+}
+
+.radioLabel {
+  height: 43px;
+  position: absolute;
+  margin-top: 8px;
+  width: 100%;
+  background: lightgray !important;
+  border: 3px solid lightgray !important;
+  box-shadow: 0px 0px 0px 2px lightgray !important;
+  border-radius: 5px;
+  padding: 11px 0px;  
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: center;
+  z-index: 0;
+}
+
+input[type="radio"]:checked + .radioLabel {
+  background: #df7d10 !important;
+  border: 3px solid #df7d10 !important;
+  box-shadow: 0px 0px 0px 2px #df7d10 !important;
+  color: white;
+}
+
+input::placeholder {
+  color: darkgray;
+}
+
+input:focus {
+  border: 2px solid #df7d10 !important;
+  box-shadow: 0px 0px 0px 2px #df7d10 !important;
+  border-radius: 5px;
+  padding: 0px 5px;
+}
+
+.form-control {
+  position: relative;
+  text-align: left;
+  color: black;
+  margin: 20px;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.form-control-radio {
+  position: relative;
+  text-align: left;
+  color: black;
+  margin: 20px 20px 18px 20px;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.active {
+  background: #df7d10 !important;
+}
+
+.btn {
+  width: 90%;
+  height: 45px;
+  margin-top: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 1%;
+  font-size: 12pt;
+  text-align: center;
+}
+
+.btn2 {
+  width: 40%;
+  height: 45px;
+  margin: 0% 5%;
+  border-radius: 5px;
+  position: relative;
+  font-size: 12pt;
+  bottom: 1%;
+  font-weight: bold;
+}
+
+.btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit{
+  background: #df7d10 !important;
+  border: 1px solid #df7d10 !important;  
+  box-shadow: none;
+  color: white;
+  font-size: 12pt;
+  text-align: center;
+}
+
+.close {
+  background: white !important;
+  border: 1px solid #df7d10 !important;
+  color: #df7d10;  
+  font-size: 12pt;
+  text-align: center;
+}
+
+.bottom {
+  position: absolute;
+  width: calc(100% - 40px);
+  bottom: 0px;
+}
+
+.tag {
+  float: left;
+  height: 30px;
+  width: fit-content;
+  background-color: #df7d10;
+  opacity: 0.8;
+  color: white;
+  font-size: 10pt;
+  margin: 3px 5px;
+  padding-left: 30px;
+  padding-right: 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.tag-input__tag {
+  height: 23px;
+  float: left;
+  margin-right: 10px;
+  background-color: #df7d10;
+  opacity: 0.8;
+  color: white;
+  margin-top: 5px;
+  font-size: 9pt;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.tag-input__tag > span {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.tag-input__duplic {
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+  line-height: 50px;
+  color: red;
+}
+
+.validCheck {
+  background: #df7d10 !important;
+  height: 45px !important;
+  border: 3px solid #df7d10 !important;  
+  border-radius: 5px;
+  box-shadow: none;
+  color: white;
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #eee;
+  opacity: 1;
+  /* Firefox */
+}
+
+.modalTitle {
+  font-weight: bold;
+  font-size: 20pt;
+  position: relative;
+  height: 40px;
+  width: 100%;
+  padding: 6px 0px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.modalText {  
+  word-break: break-all;
+  font-weight: bold;
+  font-size: 12pt;
+  padding: 0px 20px;
+  line-height: 15pt;
+  text-align: left;
+  margin-left: 10px;
+  text-indent: -18px;
+}
+
+.modalTag {
+  height: 45px;
+  margin-right: 10px;
+  background-color: #df7d10;
+  color: #eee;
+  font-size: 1pt;
+  padding: 0px 15px;
+  border-radius: 5px;
+}
+
+.link {
+  color: #2c82e0;
+  text-decoration: underline;
+}
+
+ul {
+  line-height: 200%;
+}
+
+li {  
+  font-size: 14pt;
+}
+
+.subject {
+  float: left;
+  width: fit-content;
+}
+
+.info {
+  text-align: right;
+  font-weight: bold;
+}

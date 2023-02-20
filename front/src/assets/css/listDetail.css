@@ -1,0 +1,170 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.share {
+  float: right;
+  height: 20px;
+  background: transparent;
+  border: 0px solid;
+}
+
+.host {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100%;
+}
+
+.host .profile {
+  height: calc(100% - 70px);
+  margin: 10px 0px;
+}
+
+.users {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 20px);
+  margin: 10px 0px;
+  overflow-y: auto;
+}
+
+.user {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.user .profile {
+  width: 30px;
+  height: 30px;
+  background: #e0e0e0;
+  border-radius: 50%;
+}
+
+.user .username {
+  font-size: 10pt;
+  font-weight: bold;
+  width: 80%;
+}
+
+.user .minus {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.participantInfo {
+  position: relative;
+  width: 92%;
+  height: calc(100% - 290px);
+  min-height: 200px;
+  margin: 10px auto;
+  border: solid 2px #e0e0e0;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.partHeight {
+  height: 100% !important;
+}
+
+.btnBox{
+  position: relative;
+  width: 100%;
+  padding: 0% 1.5%;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  width: 45%;
+  height: 45px;
+  font-weight: bold;
+  /* margin: 0px 20px; */
+  padding: auto;
+  border: 1px solid #DF7D10;
+  border-radius: 5px;
+  padding-top: 3px;
+}
+
+.done, .accept, .progress {
+  color: white;
+  background: #DF7D10;
+}
+
+.delete, .cancel {
+  color: #DF7D10;
+  background: white;
+}
+
+.exit {
+  width: 95% !important;
+  color: #DF7D10;
+  background: white;
+}
+
+.link {
+  width: 95% !important;
+  border: 1px solid #2c82e0;
+  color: #2c82e0;
+  background: white;
+  margin-bottom: 10px;
+}
+
+
+.bottom {
+  position: absolute;
+  width: calc(100% - 40px);
+  bottom: 0px;
+}
+
+.detail-modal-bg {
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: fixed; 
+  padding: 20px;
+}
+
+.detail-modal {
+  position: absolute;
+  width: 100%;
+  height: 110px;
+  left: 0%;
+  top: calc(100% - 100px);
+  background: white;
+  border-radius: 8px; 
+  padding: 20px;
+  font-weight: bold;
+}
+
+.detail-modal button {
+  font-size: 10pt;
+  font-weight: bold;
+  height: 30px;
+  width: 40%;
+  border: 1px solid #DF7D10;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px 5px 0px 5px;
+}
+
+
+.modalFooter {  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<query>
+    <Insert_cam_info>INSERT INTO cam_info_tb(camera_id, guid, description, reg_tm) values(?,?,?,DATE_FORMAT(sysdate(), "%Y%m%d"));</Insert_cam_info>
+    <Insert_poc_main_info>INSERT INTO poc_main_info_tb (wrkdiv, wrksqn, scndt, scnhr, trspbillnum, fcngbrancd, vhcnum, fwddt, fwdhr) VALUES (?, ?, ?, ?, ?, ?, ?, DATE_FORMAT(sysdate(), "%Y%m%d"), DATE_FORMAT(sysdate(), "%H%i%s"));</Insert_poc_main_info>
+    <Update_set_cam_info>update cam_info_tb set ? = ? where camera_id = ?;</Update_set_cam_info>
+    <Update_poc_main_info>update poc_main_info_tb set ? = ? where trspbillnum = ?;</Update_poc_main_info>
+    <Upsert_cam_info>INSERT INTO cam_info_tb(camera_id, guid, description, reg_tm) values(?,?,?,DATE_FORMAT(sysdate(), "%Y%m%d")) ON DUPLICATE KEY UPDATE camera_id = ?, guid = ?, description = ?, reg_tm = DATE_FORMAT(sysdate(), "%Y%m%d");</Upsert_cam_info>
+    <Upsert_poc_main_info>INSERT INTO poc_main_info_tb (wrkdiv, wrksqn, scndt, scnhr, trspbillnum, fcngbrancd, vhcnum, fwddt, fwdhr, dock_id) VALUES (?, ?, ?, ?, ?, ?, ?, DATE_FORMAT(sysdate(), "%Y%m%d"), DATE_FORMAT(sysdate(), "%H%i%s"), ?) ON DUPLICATE KEY UPDATE wrkdiv = ?, wrksqn = ?, scndt = ?, scnhr = ?, fcngbrancd = ?, vhcnum = ?, fwddt = DATE_FORMAT(sysdate(), "%Y%m%d"), fwdhr = DATE_FORMAT(sysdate(), "%H%i%s"), dock_id = ?;</Upsert_poc_main_info>
+    <Select_all_cam_info>select * from cam_info_tb;</Select_all_cam_info>
+    <Select_poc_main_info_total>select count(*) as cnt FROM poc_main_info_tb</Select_poc_main_info_total>
+    <Select_poc_main_info>select * from poc_main_info_tb ORDER BY scndt DESC, scnhr DESC</Select_poc_main_info>
+    <select_poc_main_part>SELECT wrkdiv, wrksqn, scndt, scnhr, trspbillnum, fcngbrancd, vhcnum, fwddt, fwdhr FROM poc_main_info_tb where dock_id = 'N46' and wrksqn = ?</select_poc_main_part>
+    <Select_all_cam_info_where>select * from cam_info_tb where camera_id = ?;</Select_all_cam_info_where>
+    <Select_poc_main_info_where>select * from poc_main_info_tb where trspbillnum = ?</Select_poc_main_info_where>
+    <Select_poc_main_info_where_total>select count(*) as cnt FROM poc_main_info_tb where trspbillnum = ?</Select_poc_main_info_where_total>
+    <Delete_all_cam_info>delete from cam_info_tb where camera_id = ?;</Delete_all_cam_info>
+    <Delete_poc_main_info>delete from poc_main_info_tb where trspbillnum = ?;</Delete_poc_main_info>
+    <Select_mypage>SELECT * FROM `t_mypage`;</Select_mypage>
+    <Insert_mypage>INSERT INTO `t_mypage`(`id`,`call`,`address`,`email`,`password`) values(?,?,?,?,?);</Insert_mypage>
+    <Delete_mypage>DELETE FROM `t_mypage` WHERE  `id`=?;</Delete_mypage>
+    <Update_mypage>UPDATE `unic`.`t_mypage` SET `call`=?, `address`=?, `email`=?, `password`=? WHERE `id`=?;</Update_mypage>
+    <check_password>SELECT COUNT(*) AS `check` FROM `t_mypage` WHERE `id`=? AND `password`=?;</check_password>
+    <change_password>UPDATE `unic`.`t_mypage` SET `password`=? WHERE `id`=?;</change_password>
+    <mp01_chatlist>SELECT * FROM `unic`.`chat_fixed` LIMIT 10;</mp01_chatlist>
+    <mp01_chatlist_Category>SELECT * FROM `unic`.`chat_fixed` WHERE `order_category` like ? LIMIT 10;</mp01_chatlist_Category>
+    <mp01_chatroom>SELECT a.chat_id AS chat_id, a.host_kakao_uid AS host_kakao_uid, a.host_kakao_nickname AS host_kakao_nickname, a.host_like AS host_like, a.host_dislike AS host_dislike, a.host_icon AS host_icon, a.kakao_link AS kakao_link, a.time_order AS time_order, a.lat AS lat, a.lng AS lng, a.order_category AS order_category, a.order_shop AS order_shop, a.order_type AS order_type, a.order_max AS order_max, a.delivery_type AS delivery_type, a.delivery_fee AS delivery_fee, a.hash_tag AS hash_tag, a.exit_code AS exit_code, b.curr AS curr FROM `unic`.`chat_fixed` a LEFT JOIN (SELECT chatid,COUNT(*) AS curr FROM t_chat GROUP BY chatid) b ON b.chatid = a.chat_id WHERE `order_category` LIKE ? AND `lng` BETWEEN ? AND ? AND `lat` BETWEEN ? AND ? AND `time_order` > ? AND `exit_code` = '000' LIMIT 10;</mp01_chatroom>
+    <mp01_chatcurr>SELECT COUNT(*) AS curr FROM `unic`.`t_chat` WHERE chatid = ?;</mp01_chatcurr>
+    <mp01_currinfo>SELECT a.chat_id AS chat_id, a.host_kakao_uid AS host_kakao_uid, a.host_kakao_nickname AS host_kakao_nickname, a.host_like AS host_like, a.host_dislike AS host_dislike, a.host_icon AS host_icon, a.kakao_link AS kakao_link, a.time_order AS time_order, a.lat AS lat, a.lng AS lng, a.order_category AS order_category, a.order_shop AS order_shop, a.order_type AS order_type, a.order_max AS order_max, a.delivery_type AS delivery_type, a.delivery_fee AS delivery_fee, a.hash_tag AS hash_tag, a.exit_code AS exit_code, b.curr AS curr FROM `unic`.`chat_fixed` a LEFT JOIN (SELECT chatid,COUNT(*) AS curr FROM t_chat GROUP BY chatid) b ON b.chatid = a.chat_id  WHERE chat_id = ? and exit_code = '000';</mp01_currinfo>
+    <mp01_joinchatInsert>INSERT INTO `unic`.`t_chat` (`chatid`, `userid`, `username`, `icon`) VALUES (?, ?, ?, ?);</mp01_joinchatInsert>
+    <mp01_joinchatUpdate>UPDATE `unic`.`user_data` SET `curr_chat_id`=? WHERE  `kakao_uid`=?;</mp01_joinchatUpdate>
+    <li02_selectUser>SELECT * FROM `unic`.`user_data` WHERE `kakao_uid`=?</li02_selectUser>
+    <li03_insertUserData>INSERT INTO `unic`.`user_data`(`kakao_uid`,`kakao_nickname`,`icon`) values(?,?,?);</li03_insertUserData>
+    <au01_updateGps>UPDATE `unic`.`user_data` SET `lat`=?, `lng`=?, `address`=? WHERE `kakao_uid`=?;</au01_updateGps>
+    <li04_selectHost>SELECT * FROM `unic`.`user_data` WHERE `kakao_uid`=?</li04_selectHost>
+    <li04_updateLike>UPDATE `unic`.`user_data` SET `like`=`like`+?, `dislike`=`dislike`+? WHERE `kakao_uid`=?</li04_updateLike>
+    <select_code>SELECT * FROM product_code WHERE large = ?</select_code>
+    <li04_userDataUpdateLike>UPDATE `unic`.`user_data` SET `like`=`like`+?, `dislike`=`dislike`+? WHERE `kakao_uid`=?</li04_userDataUpdateLike>
+    <li04_updateLastChatId>UPDATE `unic`.`user_data` SET `last_chat_id`= 0 WHERE `kakao_uid`=?</li04_updateLastChatId>
+    <nb01_selectChatId>SELECT * FROM `unic`.`chat_fixed` WHERE chat_id=?</nb01_selectChatId>
+    <nb01_selectEnterUser>SELECT * FROM `unic`.`t_chat` WHERE chatid=?</nb01_selectEnterUser>
+    <Insert_create_room>INSERT INTO `unic`.`chat_fixed`(`host_kakao_uid`,`host_kakao_nickname`,`host_icon`,`host_like`,`host_dislike`,`lat`,`lng`,`kakao_link`,`time_order`,`order_category`,`order_max`,`delivery_type`,`delivery_fee`,`order_type`,`order_shop`,`hash_tag`,`exit_code`) values(?,?,?,?,?,?,?,?,DATE_FORMAT(?,'%Y-%m-%d %H:%i:%s'),?,?,?,?,?,?,?,?);</Insert_create_room>
+    <nb01_deleteUser>DELETE FROM `unic`.`t_chat` WHERE `chatid`=? AND `userid`=?</nb01_deleteUser>
+    <nb01_updateCurrentChatId>UPDATE `unic`.`user_data` SET `curr_chat_id`=0 WHERE `kakao_uid`=?</nb01_updateCurrentChatId>
+    <update_room_state>UPDATE `unic`.`chat_fixed` SET `exit_code`=? WHERE `chat_id`=?</update_room_state>
+    <update_my_room_info>UPDATE `unic`.`user_data` SET `last_chat_id`=?, `curr_chat_id`=? WHERE `kakao_uid`=?;</update_my_room_info>
+</query>
